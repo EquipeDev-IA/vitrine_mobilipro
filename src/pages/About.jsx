@@ -4,8 +4,8 @@ import { ArrowUpRight } from '../components/Icons.jsx';
 
 const ABOUT_STATS = [
   { strong: '2021', label: 'Année de création' },
-  { strong: '12k+', label: 'Véhicules gérés' },
-  { strong: '340+', label: 'Clients actifs' },
+  { strong: '1000+', label: 'Véhicules gérés' },
+  { strong: '200+', label: 'Partenaires clients' },
   { strong: '18', label: 'Collaborateurs' }
 ];
 
@@ -56,7 +56,7 @@ const TIMELINE = [
     year: '2025 — Q4',
     badge: '25',
     title: 'Série A — 5M€',
-    desc: 'Expansion européenne en cours. Partenariats avec les principaux constructeurs. 12 000 véhicules sous gestion.'
+    desc: 'Expansion européenne en cours. Partenariats avec les principaux constructeurs. Plus de 1 000 véhicules sous gestion.'
   }
 ];
 
@@ -128,7 +128,7 @@ export default function About() {
               <p className="sub fade-up d1" style={{ marginTop: 20 }}>
                 Mobili est né en 2021 de la frustration de deux entrepreneurs
                 face à l'absence d'outils modernes pour gérer leur flotte.
-                Aujourd'hui, nous servons plus de 340 entreprises et des milliers
+                Aujourd'hui, nous comptons plus de 200 partenaires clients et des milliers
                 de particuliers à travers toute la France.
               </p>
               <a

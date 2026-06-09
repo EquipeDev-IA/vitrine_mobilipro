@@ -3,27 +3,35 @@ import { Stars } from '../components/Icons.jsx';
 const TESTIS = [
   {
     quote:
-      "« Mobili a transformé nos 45 véhicules de livraison. Réduction des coûts carburant de 22% en 3 mois. L'interface est intuitive et les rapports sont excellents. »",
-    name: 'Marc Aubert',
-    role: 'Directeur logistique — TransEco SAS',
-    initials: 'MA',
-    avStyle: { background: 'rgba(0,112,243,0.2)', color: '#60a5fa' }
-  },
-  {
-    quote:
-      "« En tant que particulier avec 2 voitures familiales, j'avais besoin d'un outil simple mais puissant. Mobili m'alerte pour les révisions et me donne une vision claire de mes dépenses. »",
+      "« J'utilise Mobili pour mes 2 voitures familiales. L'application m'alerte avant chaque révision et me donne une vision claire de mes dépenses. Un vrai gain de tranquillité. »",
     name: 'Sophie Laurent',
-    role: 'Particulière — Lyon',
+    role: 'Particulière — Lyon, France',
     initials: 'SL',
     avStyle: { background: 'rgba(0,230,118,0.15)', color: '#00E676' }
   },
   {
     quote:
-      '« Le module de maintenance prédictive nous a évité 3 pannes majeures sur notre parc de 120 véhicules. ROI évident dès la première semaine. »',
-    name: 'Thomas Deschamps',
-    role: 'Fleet Manager — BTP Services Groupe',
-    initials: 'TD',
+      "« As a busy parent with three cars in the household, Mobili keeps everything organized. Maintenance reminders, fuel tracking, GPS — it's the dashboard I always wished I had. »",
+    name: 'Michael Carter',
+    role: 'Particulier — Miami, États-Unis',
+    initials: 'MC',
+    avStyle: { background: 'rgba(0,112,243,0.2)', color: '#60a5fa' }
+  },
+  {
+    quote:
+      "« Sur l'île, l'entretien d'une voiture peut vite coûter cher. Avec Mobili je suis tout : carburant, kilométrage, factures. J'ai réduit mes frais d'environ 20% en 6 mois. »",
+    name: 'Aurélie Joseph',
+    role: 'Particulière — Fort-de-France, Martinique',
+    initials: 'AJ',
     avStyle: { background: 'rgba(251,191,36,0.15)', color: '#FBB924' }
+  },
+  {
+    quote:
+      "« À Abidjan, les trajets et le suivi de mon véhicule étaient un casse-tête. Mobili m'aide à anticiper les pannes et à mieux gérer mon budget auto. Indispensable au quotidien. »",
+    name: "Kouadio N'Guessan",
+    role: "Particulier — Abidjan, Côte d'Ivoire",
+    initials: 'KN',
+    avStyle: { background: 'rgba(167,139,250,0.18)', color: '#a78bfa' }
   }
 ];
 

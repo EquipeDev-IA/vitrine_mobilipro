@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
 
 const STATS = [
-  { num: '12k+', label: 'Véhicules gérés' },
-  { num: '340+', label: 'Entreprises clientes' },
+  { num: '1000+', label: 'Véhicules gérés' },
+  { num: '200+', label: 'Partenaires clients' },
   { num: '99.9%', label: 'Disponibilité SLA' },
   { num: '−18%', label: 'Économie carburant moy.' }
 ];
