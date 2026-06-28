@@ -11,18 +11,23 @@ const EMPTY = {
   message: ''
 };
 
+const ENDPOINT = import.meta.env.VITE_SHEETS_ENDPOINT;
+const TOKEN = import.meta.env.VITE_SHEETS_TOKEN || '';
+
 export default function Contact() {
   useScrollReveal();
   const [form, setForm] = useState(EMPTY);
   const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
+  const [sendError, setSendError] = useState('');
 
   const update = (field) => (e) =>
     setForm((f) => ({ ...f, [field]: e.target.value }));
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
+    setSendError('');
     const required = ['firstname', 'lastname', 'email', 'subject', 'message'];
     const next = {};
     required.forEach((k) => {
@@ -33,11 +38,37 @@ export default function Contact() {
       setTimeout(() => setErrors({}), 2500);
       return;
     }
+
+    if (!ENDPOINT) {
+      setSendError("Endpoint non configuré (VITE_SHEETS_ENDPOINT manquant).");
+      return;
+    }
+
     setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: 'POST',
+        // text/plain évite le preflight CORS avec Apps Script
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({
+          ...form,
+          token: TOKEN,
+          page: typeof window !== 'undefined' ? window.location.href : '',
+          userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : ''
+        })
+      });
+      const data = await res.json().catch(() => ({ ok: false }));
+      if (!res.ok || !data.ok) {
+        throw new Error(data.error || `HTTP ${res.status}`);
+      }
+      setForm(EMPTY);
       setSent(true);
-    }, 1600);
+    } catch (err) {
+      setSendError("Envoi impossible. Réessaie dans un instant ou écris-nous à contact@mobili.fr.");
+      console.error('Contact submit error:', err);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const fieldStyle = (k) =>
@@ -77,9 +108,7 @@ export default function Contact() {
               <div>
                 <h4>Email</h4>
                 <p>
-                  contact@mobili.fr
-                  <br />
-                  support@mobili.fr
+                  Contact@linvestisseurafricain.com
                 </p>
               </div>
             </div>
@@ -93,7 +122,7 @@ export default function Contact() {
               <div>
                 <h4>Téléphone</h4>
                 <p>
-                  +33 (0)5 34 00 XX XX
+                  +225 0554076173
                   <br />
                   Lun–Ven, 9h–18h
                 </p>
@@ -110,9 +139,9 @@ export default function Contact() {
               <div>
                 <h4>Siège social</h4>
                 <p>
-                  12 Allée des Innovations
+                  Rte d'Abatta, Abidjan
                   <br />
-                  31000 Toulouse, France
+                  La Villa des Investisseurs Africains
                 </p>
               </div>
             </div>
@@ -219,6 +248,23 @@ export default function Contact() {
                     style={fieldStyle('message')}
                   />
                 </div>
+
+                {sendError && (
+                  <div
+                    role="alert"
+                    style={{
+                      marginBottom: 12,
+                      padding: '10px 12px',
+                      borderRadius: 10,
+                      border: '1px solid rgba(239,68,68,.4)',
+                      background: 'rgba(239,68,68,.08)',
+                      color: '#fca5a5',
+                      fontSize: '.9rem'
+                    }}
+                  >
+                    {sendError}
+                  </div>
+                )}
 
                 <button
                   type="submit"

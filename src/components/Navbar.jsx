@@ -54,15 +54,6 @@ export default function Navbar() {
           </button>
         </div>
 
-        <div className="nav-right">
-          <button className="btn-login" onClick={go('/contact')}>
-            Connexion
-          </button>
-          <button className="btn-create" onClick={go('/contact')}>
-            Créer un compte
-          </button>
-        </div>
-
         <button
           className="hamburger"
           onClick={() => setMenuOpen((o) => !o)}
@@ -85,13 +76,6 @@ export default function Navbar() {
         </button>
         <button onClick={go('/contact')} className={isActive('/contact') ? 'active' : ''}>
           Contact
-        </button>
-        <button
-          className="btn-create"
-          style={{ marginTop: 8, borderRadius: 999, padding: 12 }}
-          onClick={go('/contact')}
-        >
-          Créer un compte
         </button>
       </div>
     </>
