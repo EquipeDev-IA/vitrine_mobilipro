@@ -58,7 +58,14 @@ export default function Hero() {
             Démarrer gratuitement
             <ArrowUpRight />
           </a>
-          <a href="#" className="btn-outline" onClick={(e) => e.preventDefault()}>
+          <a
+            href="/contact"
+            className="btn-outline"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate('/contact');
+            }}
+          >
             <PlayIcon />
             Voir la démo
           </a>
