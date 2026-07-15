@@ -3,10 +3,10 @@ import useScrollReveal from '../hooks/useScrollReveal.js';
 import { ArrowUpRight } from '../components/Icons.jsx';
 
 const ABOUT_STATS = [
-  { strong: '2021', label: 'Année de création' },
+  { strong: '2022', label: 'Année de création' },
   { strong: '1000+', label: 'Véhicules gérés' },
   { strong: '200+', label: 'Partenaires clients' },
-  { strong: '18', label: 'Collaborateurs' }
+  { strong: '40', label: 'Collaborateurs' }
 ];
 
 const MISSIONS = [
@@ -27,50 +27,15 @@ const MISSIONS = [
   }
 ];
 
-const TIMELINE = [
-  {
-    year: '2021 — Q1',
-    badge: '21',
-    title: "L'idée germe",
-    desc: 'Lucas Martin et Camille Dufour créent Mobili depuis un garage à Toulouse. Le premier prototype voit le jour.'
-  },
-  {
-    year: '2022 — Q2',
-    badge: '22',
-    title: 'Levée de fonds Seed',
-    desc: "1,2M€ levés auprès d'investisseurs français. L'équipe passe de 3 à 8 personnes. Lancement de la bêta avec 15 entreprises pilotes."
-  },
-  {
-    year: '2023 — Q3',
-    badge: '23',
-    title: 'Lancement grand public',
-    desc: "Ouverture aux particuliers avec l'offre Solo. Cap des 1 000 clients actifs. Prix Innovation Mobilité ADEME."
-  },
-  {
-    year: '2024 — Q1',
-    badge: '24',
-    title: 'Intégration IA prédictive',
-    desc: 'Déploiement du moteur de maintenance prédictive. Réduction moyenne des pannes de 67% chez nos clients.'
-  },
-  {
-    year: '2025 — Q4',
-    badge: '25',
-    title: 'Série A — 5M€',
-    desc: 'Expansion européenne en cours. Partenariats avec les principaux constructeurs. Plus de 1 000 véhicules sous gestion.'
-  }
-];
-
 const TEAM = [
-  { initials: 'LM', name: 'Lucas Martin', role: 'Co-fondateur & CEO', bio: 'Ex-Directeur logistique. Expert en gestion opérationnelle de flottes B2B.', avStyle: { background: 'rgba(0,112,243,0.15)', color: '#60a5fa' } },
-  { initials: 'CD', name: 'Camille Dufour', role: 'Co-fondatrice & CTO', bio: 'Ingénieure IA et systèmes embarqués. PhD en optimisation algorithmique.', avStyle: { background: 'rgba(0,230,118,0.12)', color: '#00E676' } },
-  { initials: 'AB', name: 'Antoine Bernard', role: 'CPO — Design', bio: 'Ancien UX Lead chez Renault Digital. Obsédé par la simplicité des interfaces.', avStyle: { background: 'rgba(167,139,250,0.15)', color: '#a78bfa' } },
-  { initials: 'MR', name: 'Marie Rousseau', role: 'Head of Sales', bio: "15 ans dans la mobilité d'entreprise. Ancienne chez Arval et ALD Automotive.", avStyle: { background: 'rgba(251,191,36,0.15)', color: '#fbbf24' } }
+  { initials: 'JB', name: 'Jean Yves Bragbo', role: 'Co-founder & CEO', bio: "Entrepreneur & Ingénieur en Intelligence Artificielle.", avStyle: { background: 'rgba(0,230,118,0.12)', color: '#00E676' } },
+  { initials: 'SB', name: 'Syriaque Belembete', role: 'Co-founder & CTO', bio: 'Entrepreneur & Développeur Full Stack.', avStyle: { background: 'rgba(0,112,243,0.15)', color: '#60a5fa' } }
 ];
 
 const VALUES = [
   {
     title: 'Sécurité avant tout',
-    desc: 'Données hébergées en France (RGPD), chiffrées de bout en bout. Nous ne vendons jamais vos données. Jamais.',
+    desc: 'Données hébergées sur une infrastructure sécurisée (Google Firebase), échanges chiffrés (HTTPS). Nous ne vendons jamais vos données. Jamais.',
     icon: <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
   },
   {
@@ -175,49 +140,6 @@ export default function About() {
                 <div className="m-n">{`// ${m.n}`}</div>
                 <h3>{m.title}</h3>
                 <p>{m.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <div className="divider" aria-hidden="true" />
-
-      <section aria-labelledby="tl-title">
-        <div className="wrap">
-          <div className="center">
-            <div className="tag fade-in">
-              <span className="tag-dot" aria-hidden="true" />
-              Notre parcours
-            </div>
-            <h2 id="tl-title" className="fade-up">
-              Une croissance <span className="gradient-text">construite pas à pas</span>
-            </h2>
-          </div>
-          <div className="timeline" role="list">
-            {TIMELINE.map((t, i) => (
-              <div className={`tl-item fade-up${i ? ` d${(i % 3) + 1}` : ''}`} role="listitem" key={t.year}>
-                {i % 2 === 0 ? (
-                  <>
-                    <div className="tl-content glass">
-                      <div className="tl-year">{t.year}</div>
-                      <h3>{t.title}</h3>
-                      <p>{t.desc}</p>
-                    </div>
-                    <div className="tl-dot" aria-hidden="true">{t.badge}</div>
-                    <div className="tl-empty" />
-                  </>
-                ) : (
-                  <>
-                    <div className="tl-empty" />
-                    <div className="tl-dot" aria-hidden="true">{t.badge}</div>
-                    <div className="tl-content glass">
-                      <div className="tl-year">{t.year}</div>
-                      <h3>{t.title}</h3>
-                      <p>{t.desc}</p>
-                    </div>
-                  </>
-                )}
               </div>
             ))}
           </div>

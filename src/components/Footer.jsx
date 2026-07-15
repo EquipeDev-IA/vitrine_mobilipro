@@ -1,5 +1,4 @@
 import { useNavigate, useLocation } from 'react-router-dom';
-import { LogoMark } from './Icons.jsx';
 
 export default function Footer() {
   const navigate = useNavigate();
@@ -29,7 +28,7 @@ export default function Footer() {
           <div className="footer-brand">
             <div className="logo">
               <div className="logo-icon" aria-hidden="true">
-                <LogoMark />
+                <img src="/favicon.png" alt="" />
               </div>
               Mobili
             </div>
@@ -53,9 +52,8 @@ export default function Footer() {
             <h4>Entreprise</h4>
             <ul>
               <li><a href="/about" onClick={goTo('/about')}>À propos</a></li>
-              <li><a href="#" onClick={noop}>Blog</a></li>
-              <li><a href="#" onClick={noop}>Carrières</a></li>
               <li><a href="/contact" onClick={goTo('/contact')}>Contact</a></li>
+              <li><a href="/confidentialite" onClick={goTo('/confidentialite')}>Confidentialité</a></li>
             </ul>
           </div>
 
@@ -73,7 +71,7 @@ export default function Footer() {
         <div className="footer-bottom">
           <span>© 2026 Mobili. Tous droits réservés.</span>
           <div style={{ display: 'flex', gap: 20 }}>
-            <a href="#" onClick={noop}>Confidentialité</a>
+            <a href="/confidentialite" onClick={goTo('/confidentialite')}>Confidentialité</a>
             <a href="#" onClick={noop}>CGU</a>
             <a href="#" onClick={noop}>Mentions légales</a>
           </div>

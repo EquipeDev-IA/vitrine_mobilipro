@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { LogoMark } from './Icons.jsx';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -29,7 +28,7 @@ export default function Navbar() {
       <nav id="mainNav" role="navigation" aria-label="Navigation principale">
         <div className="logo">
           <div className="logo-icon" aria-hidden="true">
-            <LogoMark />
+            <img src="/favicon.png" alt="" />
           </div>
           Mobili
         </div>
