@@ -1,7 +1,7 @@
 import useScrollReveal from '../hooks/useScrollReveal.js';
 
 // Politique de confidentialité — Mobili PRO
-// Dernière mise à jour : 15 juillet 2026
+// Dernière mise à jour : 17 juillet 2026 (suppression de compte in-app, App Store 5.1.1(v))
 // Base : données réellement traitées par l'application (authentification par
 // téléphone/PIN, gestion de flotte et données financières, géolocalisation des
 // véhicules, photos, notifications). Hébergement Google Firebase.
@@ -222,11 +222,28 @@ const SECTIONS = [
     body: (
       <>
         <p>
-          Vous pouvez à tout moment demander la suppression de votre compte et des données
-          personnelles associées en nous contactant à{' '}
-          <a href={`mailto:${EDITEUR.email}`}>{EDITEUR.email}</a>. Après vérification de
-          votre identité, votre compte et vos données personnelles seront supprimés, sous
-          réserve des données que nous devons conserver pour des raisons légales.
+          Vous pouvez supprimer votre compte à tout moment, <strong>directement depuis
+          l’Application</strong> : ouvrez <strong>Mon Profil</strong>, appuyez sur{' '}
+          <strong>« Supprimer mon compte »</strong> et confirmez avec votre code PIN.
+        </p>
+        <p style={{ marginTop: 12 }}>
+          La suppression prend effet immédiatement : votre accès est révoqué et vos
+          données personnelles — nom, numéro de téléphone, adresse e-mail, code PIN,
+          photo de profil et identifiants de notification — sont effacées de nos
+          systèmes. Cette action est irréversible.
+        </p>
+        <p style={{ marginTop: 12 }}>
+          Les écritures comptables et financières liées à l’activité de votre flotte
+          (recettes, paiements, virements) sont conservées sous une forme{' '}
+          <strong>anonymisée</strong>, sans lien avec votre identité, pendant la durée
+          exigée par nos obligations légales et comptables. La suppression de votre
+          compte dans l’Application ne met pas fin, à elle seule, à un contrat de
+          gestion en cours : contactez-nous pour toute démarche contractuelle.
+        </p>
+        <p style={{ marginTop: 12 }}>
+          Vous pouvez également demander la suppression de votre compte en nous écrivant
+          à <a href={`mailto:${EDITEUR.email}`}>{EDITEUR.email}</a> ; après vérification
+          de votre identité, nous procéderons à la même suppression.
         </p>
       </>
     )
@@ -291,7 +308,7 @@ export default function Confidentialite() {
             Politique de <span className="gradient-text">confidentialité</span>
           </h1>
           <p className="sub fade-up d1" style={{ margin: '16px auto 0' }}>
-            Dernière mise à jour : 15 juillet 2026
+            Dernière mise à jour : 17 juillet 2026
           </p>
         </div>
 
