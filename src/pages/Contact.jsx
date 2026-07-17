@@ -122,7 +122,7 @@ export default function Contact() {
               <div>
                 <h4>Téléphone</h4>
                 <p>
-                  +225 0554076173
+                  +225 05 03 57 87 81
                   <br />
                   Lun–Ven, 9h–18h
                 </p>
