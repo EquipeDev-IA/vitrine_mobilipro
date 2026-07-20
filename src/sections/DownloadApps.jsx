@@ -1,6 +1,8 @@
 // Mettez à jour ces URLs avec les vrais liens de vos applications
 const PLAY_STORE_URL = '#'; // ex: https://play.google.com/store/apps/details?id=fr.mobili.app
-const APP_STORE_URL = '#';  // ex: https://apps.apple.com/fr/app/mobili/id000000000
+// Lien sans code pays : l'App Store redirige automatiquement le visiteur vers
+// sa boutique locale (Côte d'Ivoire, France, etc.).
+const APP_STORE_URL = 'https://apps.apple.com/app/id6791186198';
 
 export default function DownloadApps() {
   return (
